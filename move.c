@@ -6,24 +6,58 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:22:29 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/17 17:27:38 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/20 16:15:41 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-ch_your_move()
-{
-    int bit;
-    int i;
-    
-    i = 0;
-    bit = 0;
-    while (bit < max_bits)
-    {
-        while (i < size)
-        {
+#include <push_swap.h>
 
-        }
-        
-    }
+int pb(t_node **a, t_node **b)
+{
+    t_node *tmp;
     
+    if (!a ||!*a)
+        return 0;
+        
+    tmp = *a;
+    *a = (*a) -> next;
+    
+    tmp -> next = *b;
+    *b = tmp;
+    write(1, "pb\n", 3);
+    return 1;  
 }
+int pa(t_node **a, t_node **b)
+{
+    t_node *tmp;
+    
+    if (!b || !*b)
+        return 0;
+
+    tmp = *b;
+    *b = (*b) -> next;
+    
+    tmp -> next = *a;
+    *a = tmp;
+    write(1, "pa\n", 3);
+    return 1;
+}
+int ra(t_node **a)
+{
+    t_node *first;
+    t_node *last;
+    
+    if (!a || !*a || !(*a) -> next)
+        return 0;
+    first = *a;
+    *a = first -> next;
+    last = *a;
+    while (last -> next)
+        last = last -> next;
+        
+    last -> next = first;
+    first -> next = NULL;
+    write(1, "ra\n", 3);
+    return 1;
+}
+

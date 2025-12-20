@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:49:51 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/18 18:19:13 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/20 17:53:10 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,13 @@ void radix(t_node **a, t_node **b)
         while (i < size)
         {
             if((((*a) -> index >> bit) & 1) == 0)
+                {
                 pb(a,b);
+                }
                 else
+                {
                 ra(a);
+                }
                 i++;
         }
         while (*b)
