@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:30:59 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/20 16:12:10 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/24 18:03:40 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,7 @@ int pb(t_node **a, t_node **b);
 t_node *to_de_stack(int argc, char **argv);
 void add_node(t_node **a, int val);
 void index_stack(t_node *a);
+void handel_with_2(t_node **a);
+int sa(t_node **a);
+void	handel_with_3(t_node **a);
+int rra(t_node **a);
