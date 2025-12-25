@@ -52,3 +52,60 @@ void	handel_with_3(t_node **a)
     else if(one > two && two < thi && thi < one)
     ra(a);
 }
+handel_with_4(t_node **a, t_node **b)
+{
+	int po;
+
+	po = find_po(*a);
+	if(po == 1)
+		ra(a);
+	else if(po == 2)
+	{
+		ra(a);
+		ra(a);
+	}
+	else if(po == 3)
+	{
+		rra(a);
+	}
+	pb(a,b);
+	handel_with_3(a);
+	pa(a ,b);
+}
+اhandel_with_5(t_node *a, t_node *b)
+{
+	int po;
+
+	po =find_po(a);
+		if(po == 1)
+		ra(a);
+	else if(po == 2)
+	{
+		ra(a);
+		ra(a);
+	}
+	else if(po == 3)
+	{
+		rra(a);
+	}
+	pb(a,b);
+
+	
+		po =find_po(a);
+		if(po == 1)
+		ra(a);
+	else if(po == 2)
+	{
+		ra(a);
+		ra(a);
+	}
+	else if(po == 3)
+	{
+		rra(a);
+	}
+	pb(a,b);
+	handel_with_3(a);
+	pa(a,b);
+	pa(a,b);
+	
+}
