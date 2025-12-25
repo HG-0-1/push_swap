@@ -72,7 +72,7 @@ handel_with_4(t_node **a, t_node **b)
 	handel_with_3(a);
 	pa(a ,b);
 }
-اhandel_with_5(t_node *a, t_node *b)
+اhandel_with_5(t_node **a, t_node **b)
 {
 	int po;
 
@@ -87,7 +87,13 @@ handel_with_4(t_node **a, t_node **b)
 	else if(po == 3)
 	{
 		rra(a);
+		rra(a);
 	}
+	else if (po == 4)
+	{
+		rra(a);
+	}
+	
 	pb(a,b);
 
 	
