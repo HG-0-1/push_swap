@@ -73,3 +73,33 @@ void index_stack(t_node *a)
     }
     
 }
+int find_min(t_node *a)
+{
+    int min;
+if(!*a)
+    return 0;
+    min = a -> index;
+    while(a)
+        {
+            if(a -> index < min)
+                min = a -> index;
+            a = a -> next;
+        }
+    return min;
+}
+int find_my_min(t_node *a)
+{
+    int min;
+    int po;
+
+    min = find_min(a);
+    po = 0;
+    while(a)
+        {
+        if(min == a -> index)
+            return po;
+        po++;
+            a = a -> next;
+        }
+    return 0;
+}
