@@ -6,7 +6,7 @@ INCLUDES = -I. -I./libft
 # LDFLAGS = -lmlx -lXext -lX11 -lm
 LIBFT = libft/libft.a
 
-SRCS = move.c radix.c push_swap.c uitle.c handel_num.c
+SRCS = move.c radix.c push_swap.c uitle.c uitle2.c handel_num.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME) $(LIBFT)

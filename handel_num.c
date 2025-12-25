@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 18:59:52 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/24 19:00:17 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/25 15:57:20 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	handel_with_2(t_node **a)
 
 void	handel_with_3(t_node **a)
 {
-    int one;  
-    int two;
-    int thi;
-    
+	int	one;
+	int	two;
+	int	thi;
+
     one = (*a)->index;
     two = (*a)->next->index;
     thi = (*a)->next->next->index;
@@ -52,11 +52,11 @@ void	handel_with_3(t_node **a)
     else if(one > two && two < thi && thi < one)
     ra(a);
 }
-handel_with_4(t_node **a, t_node **b)
+void handel_with_4(t_node **a, t_node **b)
 {
 	int po;
 
-	po = find_po(*a);
+	po = find_my_min(*a);
 	if(po == 1)
 		ra(a);
 	else if(po == 2)
@@ -72,11 +72,11 @@ handel_with_4(t_node **a, t_node **b)
 	handel_with_3(a);
 	pa(a ,b);
 }
-اhandel_with_5(t_node **a, t_node **b)
+void handel_in5(t_node **a, t_node **b)
 {
-	int po;
+int po;
 
-	po =find_po(a);
+	po =find_my_min(*a);
 		if(po == 1)
 		ra(a);
 	else if(po == 2)
@@ -93,11 +93,14 @@ handel_with_4(t_node **a, t_node **b)
 	{
 		rra(a);
 	}
+		pb(a,b);		
+}
+void handel_with_5(t_node **a, t_node **b)
+{
+	int po;
 	
-	pb(a,b);
-
-	
-		po =find_po(a);
+	handel_in5(a, b);
+		po =find_my_min(*a);
 		if(po == 1)
 		ra(a);
 	else if(po == 2)

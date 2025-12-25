@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 15:45:18 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/20 16:13:28 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/25 20:56:23 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_node *to_de_stack(int argc, char **argv)
 t_node *a;
 int i;
 
+
 a = NULL;
 i = 1;
 while (i < argc)
@@ -48,6 +49,7 @@ while (i < argc)
     add_node(&a, ft_atoi(argv[i]));
     i++;
 }
+
  return a;
 }
 void index_stack(t_node *a)
@@ -76,8 +78,8 @@ void index_stack(t_node *a)
 int find_min(t_node *a)
 {
     int min;
-if(!*a)
-    return 0;
+    if(!a)
+        return 0;
     min = a -> index;
     while(a)
         {

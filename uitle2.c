@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   uitle2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 11:40:24 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/25 19:42:46 by helfayez         ###   ########.fr       */
+/*   Created: 2025/12/25 20:57:43 by helfayez          #+#    #+#             */
+/*   Updated: 2025/12/25 21:01:51 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-long	ft_atoi(const char *nptr)
+int is_sort(t_node *a)
 {
-	int	i;
-	long	sign;
-	long	res;
+    while (a && a -> next)
+    {
+        if(a -> value > a -> next -> value)
+        return 0;
+        a = a -> next;
+    }
+    return 1;
+    
+}
+void	free_stack(t_node **stack)
+{
+	t_node	*tmp;
 
-	i = 0;
-	sign = 1;
-	res = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (!stack || !*stack)
+		return ;
+	while (*stack)
 	{
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		res = res * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (res * sign);
+}
+void free1(t_node *a, t_node *b)
+{
+free_stack(&a);
+free_stack(&b);
 }
