@@ -3,7 +3,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 INCLUDES = -I. -I./libft
-# LDFLAGS = -lmlx -lXext -lX11 -lm
 LIBFT = libft/libft.a
 
 SRCS = move.c radix.c push_swap.c uitle.c uitle2.c handel_num.c

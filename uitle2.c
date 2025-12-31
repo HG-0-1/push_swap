@@ -6,23 +6,23 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:57:43 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/25 21:01:51 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/27 17:27:25 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_sort(t_node *a)
+int	is_sort(t_node *a)
 {
-    while (a && a -> next)
-    {
-        if(a -> value > a -> next -> value)
-        return 0;
-        a = a -> next;
-    }
-    return 1;
-    
+	while (a && a->next)
+	{
+		if (a->value > a->next->value)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }
+
 void	free_stack(t_node **stack)
 {
 	t_node	*tmp;
@@ -36,8 +36,20 @@ void	free_stack(t_node **stack)
 		*stack = tmp;
 	}
 }
-void free1(t_node *a, t_node *b)
+
+void	free1(t_node *a, t_node *b)
 {
-free_stack(&a);
-free_stack(&b);
+	free_stack(&a);
+	free_stack(&b);
+}
+
+int	error_handel(char **argv)
+{
+	if ((if_diget(argv + 1) == 0) || (dup_num(argv + 1) == 0) || (max_int(argv
+				+ 1) == 0))
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
+	return (0);
 }

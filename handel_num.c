@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 18:59:52 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/25 15:57:20 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/27 13:24:42 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	handel_with_3(t_node **a)
 	int	two;
 	int	thi;
 
-    one = (*a)->index;
-    two = (*a)->next->index;
-    thi = (*a)->next->next->index;
+	one = (*a)->index;
+	two = (*a)->next->index;
+	thi = (*a)->next->next->index;
 	if (one < two && two < thi)
 		return ;
 	else if (one > two && two < thi && one < thi)
@@ -43,48 +43,50 @@ void	handel_with_3(t_node **a)
 		ra(a);
 	}
 	else if (one < two && one > thi && thi < two)
-        rra(a);
-    else if (one > two && two > thi && thi < one)
-    {
-        sa(a);
-        rra(a);
-    }
-    else if(one > two && two < thi && thi < one)
-    ra(a);
+		rra(a);
+	else if (one > two && two > thi && thi < one)
+	{
+		sa(a);
+		rra(a);
+	}
+	else if (one > two && two < thi && thi < one)
+		ra(a);
 }
-void handel_with_4(t_node **a, t_node **b)
+
+void	handel_with_4(t_node **a, t_node **b)
 {
-	int po;
+	int	po;
 
 	po = find_my_min(*a);
-	if(po == 1)
+	if (po == 1)
 		ra(a);
-	else if(po == 2)
+	else if (po == 2)
 	{
 		ra(a);
 		ra(a);
 	}
-	else if(po == 3)
+	else if (po == 3)
 	{
 		rra(a);
 	}
-	pb(a,b);
+	pb(a, b);
 	handel_with_3(a);
-	pa(a ,b);
+	pa(a, b);
 }
-void handel_in5(t_node **a, t_node **b)
-{
-int po;
 
-	po =find_my_min(*a);
-		if(po == 1)
+void	handel_in5(t_node **a, t_node **b)
+{
+	int	po;
+
+	po = find_my_min(*a);
+	if (po == 1)
 		ra(a);
-	else if(po == 2)
+	else if (po == 2)
 	{
 		ra(a);
 		ra(a);
 	}
-	else if(po == 3)
+	else if (po == 3)
 	{
 		rra(a);
 		rra(a);
@@ -93,28 +95,28 @@ int po;
 	{
 		rra(a);
 	}
-		pb(a,b);		
+	pb(a, b);
 }
-void handel_with_5(t_node **a, t_node **b)
+
+void	handel_with_5(t_node **a, t_node **b)
 {
-	int po;
-	
+	int	po;
+
 	handel_in5(a, b);
-		po =find_my_min(*a);
-		if(po == 1)
+	po = find_my_min(*a);
+	if (po == 1)
 		ra(a);
-	else if(po == 2)
+	else if (po == 2)
 	{
 		ra(a);
 		ra(a);
 	}
-	else if(po == 3)
+	else if (po == 3)
 	{
 		rra(a);
 	}
-	pb(a,b);
+	pb(a, b);
 	handel_with_3(a);
-	pa(a,b);
-	pa(a,b);
-	
+	pa(a, b);
+	pa(a, b);
 }

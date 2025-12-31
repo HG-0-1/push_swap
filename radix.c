@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 16:49:51 by helfayez          #+#    #+#             */
-/*   Updated: 2025/12/25 16:07:04 by helfayez         ###   ########.fr       */
+/*   Updated: 2025/12/27 13:25:39 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,26 @@ int	stack_size(t_node *stack)
 	}
 	return (count);
 }
-void radix_helper(t_node **a, t_node **b, int bit)
+
+void	radix_helper(t_node **a, t_node **b, int bit)
 {
 	int	size;
-	int i;
-			size = stack_size(*a);	
-			i = 0;
-		while (i < size)
+	int	i;
+
+	size = stack_size(*a);
+	i = 0;
+	while (i < size)
+	{
+		if ((((*a)->index >> bit) & 1) == 0)
 		{
-			if ((((*a)->index >> bit) & 1) == 0)
-			{
-				pb(a, b);
-			}
-			else
-			{
-				ra(a);
-			}
-			i++;
+			pb(a, b);
 		}
+		else
+		{
+			ra(a);
+		}
+		i++;
+	}
 }
 
 void	radix(t_node **a, t_node **b)
@@ -71,7 +73,6 @@ void	radix(t_node **a, t_node **b)
 	int	bits;
 	int	bit;
 
-	
 	bits = max_bit(*a);
 	bit = 0;
 	while (bit < bits)
